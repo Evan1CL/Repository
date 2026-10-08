@@ -39,6 +39,9 @@ public class Moving : MonoBehaviour
         {
             rb.AddForce(Vector3.up * force);
         }
-
+        if (rb.linearVelocity.magnitude > MaxSpeed)
+        {
+            rb.linearVelocity = rb.linearVelocity.normalized * MaxSpeed;
+        }
     }
 }
