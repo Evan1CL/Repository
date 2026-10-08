@@ -5,6 +5,7 @@ public class Moving : MonoBehaviour
     private Rigidbody rb;
     private float force = 2;
     private float MaxSpeed = 4;
+    private float maxLinearVelocity = 4;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -34,13 +35,10 @@ public class Moving : MonoBehaviour
         {
             rb.AddForce(Vector3.down * force);
         }
-        if (Input.GetKey(KeyCode.Space)) 
+        if (Input.GetKey(KeyCode.Space))
         {
             rb.AddForce(Vector3.up * force);
         }
-        if (rb.Velocity.magnitude > MaxSpeed) 
-        {
-            rb.Velocity = rb.Velocity.normalized * MaxSpeed;
-        }
+
     }
 }
